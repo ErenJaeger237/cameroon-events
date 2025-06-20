@@ -191,10 +191,17 @@ $events = fetchAll($sql, $params);
                     <?php foreach ($events as $event): ?>
                         <div class="col-md-6 col-lg-4 fade-in-up">
                             <div class="card event-card h-100">
-                                <?php if ($event['image'] && file_exists("../assets/images/events/" . $event['image'])): ?>
-                                    <img src="../assets/images/events/<?php echo htmlspecialchars($event['image']); ?>"
+                                <?php if ($event['image']): ?>
+                                    <?php
+                                    // Check if it's an external URL or local file
+                                    $image_src = (filter_var($event['image'], FILTER_VALIDATE_URL))
+                                        ? $event['image']
+                                        : "../assets/images/events/" . $event['image'];
+                                    ?>
+                                    <img src="<?php echo htmlspecialchars($image_src); ?>"
                                          class="card-img-top event-image"
-                                         alt="<?php echo htmlspecialchars($event['name']); ?>">
+                                         alt="<?php echo htmlspecialchars($event['name']); ?>"
+                                         style="height: 200px; object-fit: cover;">
                                 <?php else: ?>
                                     <div class="event-image d-flex align-items-center justify-content-center"
                                          style="background: var(--primary-gradient); color: white; height: 200px;">
