@@ -136,12 +136,12 @@ $recent_users = getCount("SELECT COUNT(*) FROM users WHERE created_at >= DATE_SU
         }
     </style>
 </head>
-<body class="pink-pattern">
+<body class="professional-pattern">
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="../index.php">
-                <i class="fas fa-drum me-2"></i>CameroonEvents Admin
+                <i class="fas fa-calendar-alt me-2"></i>CameroonEvents Admin
             </a>
             <div class="navbar-nav ms-auto">
                 <a href="dashboard.php" class="nav-link">
@@ -158,7 +158,7 @@ $recent_users = getCount("SELECT COUNT(*) FROM users WHERE created_at >= DATE_SU
     <div class="admin-header">
         <div class="container">
             <h1 class="admin-title">
-                <i class="fas fa-users me-3" style="color: var(--cameroon-yellow);"></i>
+                <i class="fas fa-users me-3" style="color: var(--secondary-blue);"></i>
                 User Management
             </h1>
             <p class="mb-0">Manage user accounts and permissions</p>

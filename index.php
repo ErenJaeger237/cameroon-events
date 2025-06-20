@@ -52,12 +52,12 @@ $featured_events = fetchAll("SELECT * FROM events WHERE status = 'active' AND da
         }
     </style>
 </head>
-<body class="pink-pattern">
+<body class="professional-pattern">
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
             <a class="navbar-brand" href="index.php">
-                <i class="fas fa-drum me-2"></i>CameroonEvents
+                <i class="fas fa-calendar-alt me-2"></i>CameroonEvents
             </a>
             
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -117,18 +117,40 @@ $featured_events = fetchAll("SELECT * FROM events WHERE status = 'active' AND da
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 hero-content">
-                    <h1 class="mb-4">Discover Amazing Events in Cameroon</h1>
-                    <p class="lead mb-4">Book tickets for concerts, conferences, festivals and much more.
+                    <h1 class="hero-title">Discover Amazing Events in Cameroon</h1>
+                    <p class="hero-subtitle">Book tickets for concerts, conferences, festivals and much more.
                     Your next unforgettable experience awaits in the heart of Africa.</p>
-                    <div class="d-flex flex-wrap gap-3">
-                        <a href="events/list.php" class="btn btn-light btn-lg">
+
+                    <div class="hero-cta">
+                        <a href="events/list.php" class="btn-hero-primary">
                             <i class="fas fa-search me-2"></i>Browse Events
                         </a>
                         <?php if (!isLoggedIn()): ?>
-                            <a href="auth/register.php" class="btn btn-accent btn-lg">
+                            <a href="auth/register.php" class="btn-hero-secondary">
                                 <i class="fas fa-user-plus me-2"></i>Join Now
                             </a>
                         <?php endif; ?>
+                    </div>
+
+                    <div class="hero-stats">
+                        <?php
+                        // Get some quick stats for the hero section
+                        $total_events = fetchOne("SELECT COUNT(*) as count FROM events WHERE status = 'active'")['count'] ?? 0;
+                        $total_bookings = fetchOne("SELECT COUNT(*) as count FROM bookings")['count'] ?? 0;
+                        $total_users = fetchOne("SELECT COUNT(*) as count FROM users WHERE role = 'user'")['count'] ?? 0;
+                        ?>
+                        <div class="hero-stat">
+                            <span class="hero-stat-number"><?php echo $total_events; ?>+</span>
+                            <span class="hero-stat-label">Active Events</span>
+                        </div>
+                        <div class="hero-stat">
+                            <span class="hero-stat-number"><?php echo $total_bookings; ?>+</span>
+                            <span class="hero-stat-label">Tickets Sold</span>
+                        </div>
+                        <div class="hero-stat">
+                            <span class="hero-stat-number"><?php echo $total_users; ?>+</span>
+                            <span class="hero-stat-label">Happy Customers</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -152,7 +174,7 @@ $featured_events = fetchAll("SELECT * FROM events WHERE status = 'active' AND da
     <section class="py-5">
         <div class="container">
             <div class="text-center mb-5">
-                <h2 class="section-title pink-heading">Featured Events</h2>
+                <h2 class="section-title professional-heading">Featured Events</h2>
                 <p class="text-muted">Don't miss out on these amazing upcoming events</p>
             </div>
             
@@ -224,7 +246,7 @@ $featured_events = fetchAll("SELECT * FROM events WHERE status = 'active' AND da
     <section class="py-5 features-section">
         <div class="container">
             <div class="text-center mb-5">
-                <h2 class="section-title pink-heading">Why Choose CameroonEvents?</h2>
+                <h2 class="section-title professional-heading">Why Choose CameroonEvents?</h2>
                 <p class="text-muted">Experience the best in event booking in Cameroon</p>
             </div>
 
@@ -255,12 +277,12 @@ $featured_events = fetchAll("SELECT * FROM events WHERE status = 'active' AND da
     </section>
 
     <!-- Footer -->
-    <footer class="footer-pink text-white py-5">
+    <footer class="footer-professional py-5">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
                     <h5 class="mb-3">
-                        <i class="fas fa-drum me-2" style="color: var(--cameroon-yellow);"></i>CameroonEvents
+                        <i class="fas fa-calendar-alt me-2" style="color: var(--secondary-blue);"></i>CameroonEvents
                     </h5>
                     <p class="text-light">Votre destination de choix pour découvrir et réserver des événements extraordinaires au Cameroun.
                     Des concerts aux conférences, nous avons tout ce qu'il vous faut.</p>
@@ -276,10 +298,10 @@ $featured_events = fetchAll("SELECT * FROM events WHERE status = 'active' AND da
                 <div class="col-md-3">
                     <h6 class="mb-3">Contact</h6>
                     <p class="text-light mb-1">
-                        <i class="fas fa-envelope me-2" style="color: var(--cameroon-yellow);"></i>info@cameroonevents.cm
+                        <i class="fas fa-envelope me-2" style="color: var(--secondary-blue);"></i>info@cameroonevents.cm
                     </p>
                     <p class="text-light mb-1">
-                        <i class="fas fa-phone me-2" style="color: var(--cameroon-yellow);"></i>+237 6XX XXX XXX
+                        <i class="fas fa-phone me-2" style="color: var(--secondary-blue);"></i>+237 6XX XXX XXX
                     </p>
                     <div class="mt-3">
                         <a href="#" class="text-light me-3"><i class="fab fa-facebook fa-lg"></i></a>

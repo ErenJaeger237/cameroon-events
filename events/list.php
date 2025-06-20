@@ -71,12 +71,12 @@ $events = fetchAll($sql, $params);
         }
     </style>
 </head>
-<body class="pink-pattern">
+<body class="professional-pattern">
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
             <a class="navbar-brand" href="../index.php">
-                <i class="fas fa-drum me-2"></i>CameroonEvents
+                <i class="fas fa-calendar-alt me-2"></i>CameroonEvents
             </a>
             
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
