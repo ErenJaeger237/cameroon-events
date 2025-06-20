@@ -1,0 +1,18 @@
+# Event Images Directory
+
+This directory contains event images. In a production environment, you would upload actual event images here.
+
+For demo purposes, the system uses gradient backgrounds when images are not found.
+
+Recommended image formats:
+- JPG or PNG
+- Minimum size: 400x300 pixels
+- Maximum file size: 2MB
+
+Sample image names used in the database:
+- tech-conference.jpg
+- music-festival.jpg
+- business-workshop.jpg
+- art-exhibition.jpg
+- food-wine.jpg
+- charity-run.jpg
