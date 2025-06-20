@@ -6,9 +6,17 @@
 
 // Database configuration - Railway compatible
 // Check if we're on Railway (production) or local development
-if (isset($_ENV['RAILWAY_ENVIRONMENT']) || isset($_ENV['MYSQLHOST'])) {
-    // Railway production environment
-    define('DB_HOST', $_ENV['MYSQLHOST'] ?? 'localhost');
+if (isset($_ENV['MYSQL_URL'])) {
+    // Railway production environment - parse MYSQL_URL
+    $url = parse_url($_ENV['MYSQL_URL']);
+    define('DB_HOST', $url['host']);
+    define('DB_NAME', ltrim($url['path'], '/'));
+    define('DB_USER', $url['user']);
+    define('DB_PASS', $url['pass']);
+    define('DB_PORT', $url['port'] ?? '3306');
+} elseif (isset($_ENV['MYSQLHOST'])) {
+    // Alternative Railway format
+    define('DB_HOST', $_ENV['MYSQLHOST']);
     define('DB_NAME', $_ENV['MYSQLDATABASE'] ?? 'railway');
     define('DB_USER', $_ENV['MYSQLUSER'] ?? 'root');
     define('DB_PASS', $_ENV['MYSQLPASSWORD'] ?? '');

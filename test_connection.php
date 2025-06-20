@@ -8,25 +8,36 @@ echo "<h2>🔧 Railway MySQL Connection Test</h2>";
 // Display environment variables
 echo "<h3>Environment Variables:</h3>";
 echo "<ul>";
-echo "<li><strong>MYSQLHOST:</strong> " . ($_ENV['MYSQLHOST'] ?? 'NOT SET') . "</li>";
-echo "<li><strong>MYSQLDATABASE:</strong> " . ($_ENV['MYSQLDATABASE'] ?? 'NOT SET') . "</li>";
-echo "<li><strong>MYSQLUSER:</strong> " . ($_ENV['MYSQLUSER'] ?? 'NOT SET') . "</li>";
-echo "<li><strong>MYSQLPASSWORD:</strong> " . (isset($_ENV['MYSQLPASSWORD']) ? '[SET]' : 'NOT SET') . "</li>";
-echo "<li><strong>MYSQLPORT:</strong> " . ($_ENV['MYSQLPORT'] ?? 'NOT SET') . "</li>";
+echo "<li><strong>MYSQL_URL:</strong> " . ($_ENV['MYSQL_URL'] ?? 'NOT SET') . "</li>";
+echo "<li><strong>MYSQL_DATABASE:</strong> " . ($_ENV['MYSQL_DATABASE'] ?? 'NOT SET') . "</li>";
+echo "<li><strong>MYSQL_ROOT_PASSWORD:</strong> " . (isset($_ENV['MYSQL_ROOT_PASSWORD']) ? '[SET]' : 'NOT SET') . "</li>";
+echo "<li><strong>MYSQL_PUBLIC_URL:</strong> " . ($_ENV['MYSQL_PUBLIC_URL'] ?? 'NOT SET') . "</li>";
 echo "</ul>";
 
 // Check if Railway environment
-if (isset($_ENV['RAILWAY_ENVIRONMENT']) || isset($_ENV['MYSQLHOST'])) {
-    echo "<p>✅ Railway environment detected</p>";
-    
-    $host = $_ENV['MYSQLHOST'] ?? 'localhost';
+if (isset($_ENV['MYSQL_URL'])) {
+    echo "<p>✅ Railway environment detected (MYSQL_URL format)</p>";
+
+    // Parse Railway MYSQL_URL
+    $url = parse_url($_ENV['MYSQL_URL']);
+    $host = $url['host'];
+    $dbname = ltrim($url['path'], '/');
+    $username = $url['user'];
+    $password = $url['pass'];
+    $port = $url['port'] ?? '3306';
+
+} elseif (isset($_ENV['MYSQLHOST'])) {
+    echo "<p>✅ Railway environment detected (individual variables)</p>";
+
+    $host = $_ENV['MYSQLHOST'];
     $dbname = $_ENV['MYSQLDATABASE'] ?? 'railway';
     $username = $_ENV['MYSQLUSER'] ?? 'root';
     $password = $_ENV['MYSQLPASSWORD'] ?? '';
     $port = $_ENV['MYSQLPORT'] ?? '3306';
+
 } else {
     echo "<p>❌ Railway environment NOT detected - using local settings</p>";
-    
+
     $host = 'localhost';
     $dbname = 'event_booking';
     $username = 'root';
