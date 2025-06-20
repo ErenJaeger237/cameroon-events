@@ -56,9 +56,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <style>
         body {
             background: linear-gradient(135deg,
-                var(--primary-blue) 0%,
-                var(--secondary-blue) 50%,
-                var(--accent-blue) 100%
+                var(--cameroon-green) 0%,
+                var(--african-sunset) 50%,
+                var(--cameroon-red) 100%
             );
             min-height: 100vh;
             display: flex;

@@ -129,12 +129,12 @@ $events = fetchAll("SELECT id, name, image, date, location FROM events ORDER BY 
         }
     </style>
 </head>
-<body class="professional-pattern">
+<body class="pink-pattern">
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="../index.php">
-                <i class="fas fa-calendar-alt me-2"></i>CameroonEvents Admin
+                <i class="fas fa-drum me-2"></i>CameroonEvents Admin
             </a>
             <div class="navbar-nav ms-auto">
                 <a href="dashboard.php" class="nav-link">
@@ -151,7 +151,7 @@ $events = fetchAll("SELECT id, name, image, date, location FROM events ORDER BY 
     <div class="admin-header">
         <div class="container">
             <h1 class="admin-title">
-                <i class="fas fa-images me-3" style="color: var(--secondary-blue);"></i>
+                <i class="fas fa-images me-3" style="color: var(--cameroon-yellow);"></i>
                 Event Image Management
             </h1>
             <p class="mb-0">Upload and manage images for your events</p>

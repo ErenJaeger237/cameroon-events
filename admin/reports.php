@@ -119,12 +119,12 @@ $monthly_revenue = fetchAll("
         }
     </style>
 </head>
-<body class="professional-pattern">
+<body class="pink-pattern">
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="../index.php">
-                <i class="fas fa-calendar-alt me-2"></i>CameroonEvents Admin
+                <i class="fas fa-drum me-2"></i>CameroonEvents Admin
             </a>
             <div class="navbar-nav ms-auto">
                 <a href="dashboard.php" class="nav-link">

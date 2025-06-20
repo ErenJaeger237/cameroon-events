@@ -60,9 +60,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <style>
         body {
             background: linear-gradient(135deg,
-                var(--primary-blue) 0%,
-                var(--secondary-blue) 50%,
-                var(--accent-blue) 100%
+                var(--cameroon-green) 0%,
+                var(--african-sunset) 50%,
+                var(--cameroon-red) 100%
             );
             min-height: 100vh;
             display: flex;
@@ -106,14 +106,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="col-md-6 col-lg-5">
                 <div class="login-card p-5">
                     <div class="text-center mb-4">
-                        <i class="fas fa-calendar-alt fa-3x mb-3" style="color: var(--primary-blue);"></i>
+                        <i class="fas fa-drum fa-3x african-icon mb-3"></i>
                         <h2 class="welcome-title">Welcome to CameroonEvents</h2>
                         <p class="text-muted">Sign in to your account</p>
                     </div>
 
                     <!-- Demo Credentials -->
                     <div class="demo-credentials">
-                        <h6 class="fw-bold mb-2" style="color: var(--primary-blue);">
+                        <h6 class="fw-bold mb-2" style="color: var(--cameroon-green);">
                             <i class="fas fa-info-circle me-2"></i>Demo Credentials
                         </h6>
                         <small style="color: var(--text-secondary);">
@@ -142,7 +142,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <form method="POST" action="">
                         <div class="mb-3">
                             <label for="email" class="form-label" style="color: var(--text-primary);">
-                                <i class="fas fa-envelope me-2" style="color: var(--primary-blue);"></i>Email Address
+                                <i class="fas fa-envelope me-2" style="color: var(--cameroon-green);"></i>Email Address
                             </label>
                             <input type="email" class="form-control" id="email" name="email"
                                    value="<?php echo htmlspecialchars($_POST['email'] ?? ''); ?>" required>
@@ -150,7 +150,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                         <div class="mb-4">
                             <label for="password" class="form-label" style="color: var(--text-primary);">
-                                <i class="fas fa-lock me-2" style="color: var(--secondary-blue);"></i>Password
+                                <i class="fas fa-lock me-2" style="color: var(--cameroon-red);"></i>Password
                             </label>
                             <input type="password" class="form-control" id="password" name="password" required>
                         </div>
@@ -162,7 +162,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                     <div class="text-center">
                         <p class="mb-0">Don't have an account?
-                            <a href="register.php" class="text-decoration-none" style="color: var(--primary-blue); font-weight: 600;">Create one here</a>
+                            <a href="register.php" class="text-decoration-none" style="color: var(--cameroon-green); font-weight: 600;">Create one here</a>
                         </p>
                         <a href="../index.php" class="text-muted text-decoration-none mt-2 d-inline-block">
                             <i class="fas fa-arrow-left me-1"></i>Back to Home

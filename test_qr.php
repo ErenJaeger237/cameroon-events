@@ -164,7 +164,7 @@
                     width: 200,
                     margin: 2,
                     color: {
-                        dark: '#1e3a8a',
+                        dark: '#E91E63',
                         light: '#FFFFFF'
                     }
                 }, function (error) {
@@ -202,7 +202,7 @@
                     width: 200,
                     margin: 2,
                     color: {
-                        dark: '#1e3a8a',
+                        dark: '#E91E63',
                         light: '#FFFFFF'
                     }
                 }, function (error) {
@@ -240,7 +240,7 @@
                     width: 256,
                     margin: 2,
                     color: {
-                        dark: '#1e3a8a',
+                        dark: '#007A3D',
                         light: '#FFFFFF'
                     }
                 }, function (error) {
