@@ -52,7 +52,7 @@ $featured_events = fetchAll("SELECT * FROM events WHERE status = 'active' AND da
         }
     </style>
 </head>
-<body class="african-pattern">
+<body class="pink-pattern">
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
@@ -152,7 +152,7 @@ $featured_events = fetchAll("SELECT * FROM events WHERE status = 'active' AND da
     <section class="py-5">
         <div class="container">
             <div class="text-center mb-5">
-                <h2 class="section-title african-heading">Featured Events</h2>
+                <h2 class="section-title pink-heading">Featured Events</h2>
                 <p class="text-muted">Don't miss out on these amazing upcoming events</p>
             </div>
             
@@ -224,7 +224,7 @@ $featured_events = fetchAll("SELECT * FROM events WHERE status = 'active' AND da
     <section class="py-5 features-section">
         <div class="container">
             <div class="text-center mb-5">
-                <h2 class="section-title african-heading">Why Choose CameroonEvents?</h2>
+                <h2 class="section-title pink-heading">Why Choose CameroonEvents?</h2>
                 <p class="text-muted">Experience the best in event booking in Cameroon</p>
             </div>
 
@@ -255,7 +255,7 @@ $featured_events = fetchAll("SELECT * FROM events WHERE status = 'active' AND da
     </section>
 
     <!-- Footer -->
-    <footer class="footer-african text-white py-5">
+    <footer class="footer-pink text-white py-5">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">

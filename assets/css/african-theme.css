@@ -1,37 +1,37 @@
-/* African Theme for Cameroon Event Booking System */
+/* Pink Theme for Cameroon Event Booking System */
 
 :root {
-    /* Cameroon Flag Colors */
-    --cameroon-green: #007A3D;
-    --cameroon-red: #CE1126;
-    --cameroon-yellow: #FECB00;
-    
-    /* African Earth Tones */
-    --african-sunset: #FF6B35;
-    --african-terracotta: #D2691E;
-    --african-gold: #FFD700;
-    --african-bronze: #CD7F32;
-    --african-earth: #8B4513;
-    --african-sand: #F4A460;
-    
-    /* Modern African Palette */
-    --primary-gradient: linear-gradient(135deg, var(--cameroon-green) 0%, var(--african-sunset) 100%);
-    --secondary-gradient: linear-gradient(135deg, var(--cameroon-red) 0%, var(--african-terracotta) 100%);
-    --accent-gradient: linear-gradient(135deg, var(--cameroon-yellow) 0%, var(--african-gold) 100%);
-    
+    /* Pink Color Palette */
+    --pink-primary: #E91E63;
+    --pink-secondary: #F06292;
+    --pink-accent: #FF69B4;
+
+    /* Pink Shades */
+    --pink-light: #FCE4EC;
+    --pink-medium: #F8BBD9;
+    --pink-dark: #AD1457;
+    --pink-deep: #880E4F;
+    --pink-rose: #FF1744;
+    --pink-coral: #FF6090;
+
+    /* Modern Pink Palette */
+    --primary-gradient: linear-gradient(135deg, var(--pink-primary) 0%, var(--pink-accent) 100%);
+    --secondary-gradient: linear-gradient(135deg, var(--pink-secondary) 0%, var(--pink-coral) 100%);
+    --accent-gradient: linear-gradient(135deg, var(--pink-accent) 0%, var(--pink-rose) 100%);
+
     /* Text Colors */
-    --text-primary: #2C1810;
-    --text-secondary: #5D4037;
-    --text-light: #8D6E63;
+    --text-primary: #4A148C;
+    --text-secondary: #7B1FA2;
+    --text-light: #9C27B0;
 }
 
-/* African Pattern Background */
-.african-pattern {
-    background-image: 
-        radial-gradient(circle at 25% 25%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 75% 75%, rgba(206, 17, 38, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 75% 25%, rgba(0, 122, 61, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 25% 75%, rgba(255, 107, 53, 0.1) 0%, transparent 50%);
+/* Pink Pattern Background */
+.pink-pattern {
+    background-image:
+        radial-gradient(circle at 25% 25%, rgba(255, 105, 180, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(233, 30, 99, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 75% 25%, rgba(240, 98, 146, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 25% 75%, rgba(255, 96, 144, 0.1) 0%, transparent 50%);
 }
 
 /* Primary Button Styling */
@@ -44,13 +44,13 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 122, 61, 0.3);
+    box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3);
 }
 
 .btn-primary:hover {
-    background: linear-gradient(135deg, #005a2d 0%, #e55a2b 100%);
+    background: linear-gradient(135deg, #AD1457 0%, #FF1744 100%);
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0, 122, 61, 0.4);
+    box-shadow: 0 8px 25px rgba(233, 30, 99, 0.4);
 }
 
 /* Secondary Button */
@@ -64,7 +64,7 @@
 }
 
 .btn-secondary:hover {
-    background: linear-gradient(135deg, #a00e1f 0%, #b8571a 100%);
+    background: linear-gradient(135deg, #C2185B 0%, #E91E63 100%);
     color: white;
 }
 
@@ -73,14 +73,14 @@
     background: var(--accent-gradient);
     border: none;
     border-radius: 25px;
-    color: var(--text-primary);
+    color: white;
     padding: 12px 30px;
     font-weight: 600;
 }
 
 .btn-accent:hover {
-    background: linear-gradient(135deg, #e6c200 0%, #e6c200 100%);
-    color: var(--text-primary);
+    background: linear-gradient(135deg, #FF1744 0%, #FF6090 100%);
+    color: white;
 }
 
 /* Navigation Bar */
@@ -101,11 +101,11 @@
 
 /* Hero Section */
 .hero-section {
-    background: linear-gradient(135deg, 
-        rgba(0, 122, 61, 0.9) 0%, 
-        rgba(255, 107, 53, 0.9) 50%,
-        rgba(206, 17, 38, 0.9) 100%
-    ), 
+    background: linear-gradient(135deg,
+        rgba(233, 30, 99, 0.9) 0%,
+        rgba(255, 105, 180, 0.9) 50%,
+        rgba(255, 23, 68, 0.9) 100%
+    ),
     url('https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?ixlib=rb-4.0.3') center/cover;
     min-height: 70vh;
     display: flex;
@@ -121,7 +121,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="african-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="2" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23african-pattern)"/></svg>');
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="pink-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="2" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23pink-pattern)"/></svg>');
     opacity: 0.3;
 }
 
@@ -153,7 +153,7 @@
     border-radius: 20px;
     padding: 2rem;
     text-align: center;
-    box-shadow: 0 8px 25px rgba(0, 122, 61, 0.3);
+    box-shadow: 0 8px 25px rgba(233, 30, 99, 0.3);
     transition: transform 0.3s ease;
 }
 
@@ -163,13 +163,13 @@
 
 .stat-card.secondary {
     background: var(--secondary-gradient);
-    box-shadow: 0 8px 25px rgba(206, 17, 38, 0.3);
+    box-shadow: 0 8px 25px rgba(240, 98, 146, 0.3);
 }
 
 .stat-card.accent {
     background: var(--accent-gradient);
-    color: var(--text-primary);
-    box-shadow: 0 8px 25px rgba(255, 203, 0, 0.3);
+    color: white;
+    box-shadow: 0 8px 25px rgba(255, 105, 180, 0.3);
 }
 
 /* Feature Icons */
@@ -184,18 +184,18 @@
     color: white;
     font-size: 2rem;
     margin: 0 auto 1rem;
-    box-shadow: 0 8px 25px rgba(0, 122, 61, 0.3);
+    box-shadow: 0 8px 25px rgba(233, 30, 99, 0.3);
 }
 
-/* African Typography */
-.african-heading {
+/* Pink Typography */
+.pink-heading {
     font-family: 'Playfair Display', serif;
     font-weight: 700;
     color: var(--text-primary);
     position: relative;
 }
 
-.african-heading::after {
+.pink-heading::after {
     content: '';
     position: absolute;
     bottom: -10px;
@@ -222,12 +222,12 @@
 }
 
 .form-control:focus {
-    border-color: var(--cameroon-green);
-    box-shadow: 0 0 0 0.2rem rgba(0, 122, 61, 0.25);
+    border-color: var(--pink-primary);
+    box-shadow: 0 0 0 0.2rem rgba(233, 30, 99, 0.25);
 }
 
 /* Footer */
-.footer-african {
+.footer-pink {
     background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
     color: white;
 }

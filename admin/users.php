@@ -136,7 +136,7 @@ $recent_users = getCount("SELECT COUNT(*) FROM users WHERE created_at >= DATE_SU
         }
     </style>
 </head>
-<body class="african-pattern">
+<body class="pink-pattern">
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">

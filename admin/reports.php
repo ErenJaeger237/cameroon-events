@@ -119,7 +119,7 @@ $monthly_revenue = fetchAll("
         }
     </style>
 </head>
-<body class="african-pattern">
+<body class="pink-pattern">
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
