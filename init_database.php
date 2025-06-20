@@ -4,12 +4,49 @@
  * Run this once after deploying to Railway to set up the database
  */
 
-require_once 'includes/db.php';
+// Direct Railway connection for initialization
+$mysql_url = "mysql://root:JUbpLBZCskDyPLwEceEQffOspVXAiJOx@metro.proxy.rlwy.net:41333/railway";
+$url = parse_url($mysql_url);
+
+try {
+    $pdo = new PDO(
+        "mysql:host={$url['host']};port={$url['port']};dbname=" . ltrim($url['path'], '/') . ";charset=utf8mb4",
+        $url['user'],
+        $url['pass'],
+        [
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+            PDO::ATTR_EMULATE_PREPARES => false,
+            PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => false,
+        ]
+    );
+
+    // Helper functions for this script
+    function executeQuery($sql, $params = []) {
+        global $pdo;
+        try {
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute($params);
+            return $stmt;
+        } catch (PDOException $e) {
+            error_log("Database query error: " . $e->getMessage());
+            return false;
+        }
+    }
+
+    function fetchOne($sql, $params = []) {
+        $stmt = executeQuery($sql, $params);
+        return $stmt ? $stmt->fetch() : false;
+    }
+
+    function getCount($sql, $params = []) {
+        $stmt = executeQuery($sql, $params);
+        return $stmt ? $stmt->fetchColumn() : 0;
+    }
 
 echo "<h2>🚀 CameroonEvents Database Initialization</h2>";
 echo "<p>Setting up database for Railway deployment...</p>";
-
-try {
+echo "<p>✅ Connected to Railway MySQL!</p>";
     // Create tables
     $tables = [
         // Users table

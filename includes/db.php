@@ -6,6 +6,8 @@
 
 // Database configuration - Railway compatible
 // Check if we're on Railway (production) or local development
+
+// First check if we have Railway environment variables
 if (isset($_ENV['MYSQL_URL'])) {
     // Railway production environment - parse MYSQL_URL
     $url = parse_url($_ENV['MYSQL_URL']);
@@ -21,6 +23,13 @@ if (isset($_ENV['MYSQL_URL'])) {
     define('DB_USER', $_ENV['MYSQLUSER'] ?? 'root');
     define('DB_PASS', $_ENV['MYSQLPASSWORD'] ?? '');
     define('DB_PORT', $_ENV['MYSQLPORT'] ?? '3306');
+} elseif (isset($_SERVER['HTTP_HOST']) && strpos($_SERVER['HTTP_HOST'], 'railway.app') !== false) {
+    // Railway environment detected but no env vars - use direct connection
+    define('DB_HOST', 'metro.proxy.rlwy.net');
+    define('DB_NAME', 'railway');
+    define('DB_USER', 'root');
+    define('DB_PASS', 'JUbpLBZCskDyPLwEceEQffOspVXAiJOx');
+    define('DB_PORT', '41333');
 } else {
     // Local development environment
     define('DB_HOST', 'localhost');
