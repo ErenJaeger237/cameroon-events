@@ -161,8 +161,19 @@ $featured_events = fetchAll("SELECT * FROM events WHERE status = 'active' AND da
                     <?php foreach ($featured_events as $event): ?>
                         <div class="col-md-6 col-lg-4 fade-in-up">
                             <div class="card event-card h-100">
-                                <div class="event-image" style="background-image: url('assets/images/<?php echo $event['image']; ?>');">
-                                </div>
+                                <?php if ($event['image'] && file_exists("assets/images/events/" . $event['image'])): ?>
+                                    <img src="assets/images/events/<?php echo htmlspecialchars($event['image']); ?>"
+                                         class="card-img-top event-image"
+                                         alt="<?php echo htmlspecialchars($event['name']); ?>">
+                                <?php else: ?>
+                                    <div class="event-image d-flex align-items-center justify-content-center"
+                                         style="background: var(--primary-gradient); color: white; height: 200px;">
+                                        <div class="text-center">
+                                            <i class="fas fa-calendar-alt fa-3x mb-2"></i>
+                                            <p class="mb-0">Event Image</p>
+                                        </div>
+                                    </div>
+                                <?php endif; ?>
                                 <div class="card-body">
                                     <h5 class="card-title" style="color: var(--text-primary);"><?php echo htmlspecialchars($event['name']); ?></h5>
                                     <p class="text-muted mb-2">

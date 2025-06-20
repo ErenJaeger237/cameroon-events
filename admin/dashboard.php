@@ -137,6 +137,9 @@ $upcoming_events = fetchAll("
                         <a href="events.php" class="sidebar-link">
                             <i class="fas fa-calendar me-2"></i>Manage Events
                         </a>
+                        <a href="upload_images.php" class="sidebar-link">
+                            <i class="fas fa-images me-2"></i>Event Images
+                        </a>
                         <a href="bookings.php" class="sidebar-link">
                             <i class="fas fa-ticket-alt me-2"></i>View Bookings
                         </a>
