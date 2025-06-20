@@ -33,7 +33,7 @@ $qr_data = json_encode([
     'booking_reference' => $booking['booking_reference'],
     'event_name' => $booking['event_name'],
     'user_name' => $booking['user_name'],
-    'verification_url' => $_SERVER['HTTP_HOST'] . '/OnlineEventBookingSystem_FULL/verify.php?ref=' . $booking['booking_reference']
+    'verification_url' => $_SERVER['HTTP_HOST'] . '/verify.php?ref=' . $booking['booking_reference']
 ]);
 
 ?>

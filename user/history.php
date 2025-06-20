@@ -306,7 +306,7 @@ $bookings = fetchAll("
                 booking_id: bookingId,
                 booking_reference: bookingRef,
                 event_name: eventName,
-                verification_url: window.location.origin + '/OnlineEventBookingSystem_FULL/verify.php?ref=' + bookingRef
+                verification_url: window.location.origin + '/verify.php?ref=' + bookingRef
             };
 
             // Clear previous QR code
